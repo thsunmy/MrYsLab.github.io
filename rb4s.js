@@ -47,22 +47,45 @@
             [' ', 'LED %m.ledState', 'ledCcontrol' ,'On'],
             [' ', 'Play Tone  %n Hz  %n ms', 'playTone', '1000', '500'],
             ['r', 'Push Button', 'getPushButton'],
-            ['r', 'Line Follower m.lineFollower', 'lineFollower'],
-            ['r', '%m.bumper Bump', 'bump'],
-            ['r', 'Accelerometer Axis: %m.axis', 'accel', 'X'],
-            ['r', 'Encoder Tick Count', 'encoder']
+            ['r', 'Line Follower %m.lineFollower', 'lineFollower', '1'],
+            ['r', 'Encoder Tick Count', 'encoder'],
+            ['r', '%m.bumper Bumper', 'bump','Left'],
+            ['r', 'Accelerometer %m.axis axis:' , 'accel', 'X']
         ],
         menus: {
             motor: ['Left', 'Right'],
             operation: ['Forward', 'Reverse', 'Coast', 'Brake'],
             ledState: ['On', 'Off'],
             lineFollower: ['1', '2', '3'],
-            bumper: ['Left', 'Right, Accelerometer'],
+            bumper: ['Left', 'Right', 'Accelerometer'],
             axis: ['X', 'Y', 'Z']
         },
-        url: 'http://scratchx.org/?url=http://MrYsLab.github.io/rb4s'
+        url: 'http://MrYsLab.github.io/rb4s'
     };
 
     // Register the extension
     ScratchExtensions.register('RedBot For Scratch', descriptor, ext);
 })({});
+
+
+/*
+var descriptor = {
+    blocks: [
+        ['w', 'turn motor on for %n secs',             'motorOnFor', 1],
+        [' ', 'turn motor on',                         'allMotorsOn'],
+        [' ', 'turn motor off',                        'allMotorsOff'],
+        [' ', 'set motor power %n',                    'startMotorPower', 100],
+        [' ', 'set motor direction %m.motorDirection', 'setMotorDirection', 'this way'],
+        ['h', 'when distance %m.lessMore %n',          'whenDistance', '<', 20],
+        ['h', 'when tilt %m.eNe %n',                   'whenTilt', '=', 1],
+        ['r', 'distance',                              'getDistance'],
+        ['r', 'tilt',                                  'getTilt']
+    ],
+    menus: {
+        motorDirection: ['this way', 'that way', 'reverse'],
+        lessMore: ['<', '>'],
+        eNe: ['=','not =']
+    },
+    url: 'http://info.scratch.mit.edu/WeDo'
+};
+ */
