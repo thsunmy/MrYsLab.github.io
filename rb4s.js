@@ -39,11 +39,23 @@
 
     };
 
+    ext.coast = function() {
+
+    };
+
+    ext.brake = function() {
+
+    };
+
+
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
             // Block type, block name, function name
-            [' ', 'Set %m.motor motor %m.operation', 'motorControl', 'Left', 'Forward'],
+            [' ', ' %m.motor wheel move %m.operation speed = %m.speeds ', 'motorControl', 'Left', 'Forward', '1'],
+            [' ', 'Coast %m.motor motor', "coast", "Left"],
+            [' ', 'Brake %m.motor motor', "brake", "Left"],
+            [' ', 'Hello'],
             [' ', 'LED %m.ledState', 'ledCcontrol' ,'On'],
             [' ', 'Play Tone  %n Hz  %n ms', 'playTone', '1000', '500'],
             ['r', 'Push Button', 'getPushButton'],
@@ -54,11 +66,12 @@
         ],
         menus: {
             motor: ['Left', 'Right'],
-            operation: ['Forward', 'Reverse', 'Coast', 'Brake'],
+            operation: ['Forward', 'Reverse'],
             ledState: ['On', 'Off'],
             lineFollower: ['1', '2', '3'],
             bumper: ['Left', 'Right', 'Accelerometer'],
-            axis: ['X', 'Y', 'Z']
+            axis: ['X', 'Y', 'Z'],
+            speeds: ['1','2','3','4','5','6','7','8','9','10']
         },
         url: 'http://MrYsLab.github.io/rb4s'
     };
